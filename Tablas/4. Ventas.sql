@@ -56,3 +56,25 @@ CREATE TABLE tbl_detalle_pedido (
   constraint detalle_pedido_idpedido foreign key (idpedido) references tbl_pedido(id),
   constraint detalle_pedido_idproducto foreign key (idproducto) references tbl_productos(id)
 );
+
+--drop table tbl_factura
+CREATE TABLE tbl_factura (
+  id UUID PRIMARY KEY,
+  idpedido UUID NOT NULL,
+  fecha timestamp(6),
+  valortotal numeric(10,3),
+  impuestos numeric(10,3),
+  estadopago VARCHAR(100) NOT NULL,
+  constraint factura_idpedido foreign key (idpedido) references tbl_pedido(id)
+);
+
+--drop table tbl_pago
+CREATE TABLE tbl_pago (
+  id UUID PRIMARY KEY,
+  idpedido UUID NOT NULL,
+  fechapago timestamp(6),
+  valortotal numeric(10,3),
+  metodopago VARCHAR(100) NOT NULL,
+  estadopago VARCHAR(100) NOT NULL,
+  constraint factura_idpedido foreign key (idpedido) references tbl_pedido(id)
+);
