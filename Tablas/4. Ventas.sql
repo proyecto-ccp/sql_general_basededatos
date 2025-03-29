@@ -78,3 +78,12 @@ CREATE TABLE tbl_pago (
   estadopago VARCHAR(100) NOT NULL,
   constraint factura_idpedido foreign key (idpedido) references tbl_pedido(id)
 );
+
+--drop table tbl_envio
+CREATE TABLE tbl_envio (
+  id UUID PRIMARY KEY,
+  idpedido UUID NOT NULL,
+  fechaenvio timestamp(6),
+  estadoenvio VARCHAR(100) NOT NULL,
+  constraint factura_idpedido foreign key (idpedido) references tbl_pedido(id)
+);
