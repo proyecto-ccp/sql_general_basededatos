@@ -108,8 +108,6 @@ CREATE TABLE tbl_productos (
     urlFoto2 VARCHAR(255)
 );
 
-
-
 -- Tabla SKU
 CREATE TABLE tbl_SKU (
     id UUID PRIMARY KEY,
