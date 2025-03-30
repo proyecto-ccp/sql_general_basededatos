@@ -76,7 +76,7 @@ CREATE TABLE tbl_pago (
   valortotal numeric(10,3),
   metodopago VARCHAR(100) NOT NULL,
   estadopago VARCHAR(100) NOT NULL,
-  constraint factura_idpedido foreign key (idpedido) references tbl_pedido(id)
+  constraint pago_idpedido foreign key (idpedido) references tbl_pedido(id)
 );
 
 --drop table tbl_envio
@@ -85,5 +85,29 @@ CREATE TABLE tbl_envio (
   idpedido UUID NOT NULL,
   fechaenvio timestamp(6),
   estadoenvio VARCHAR(100) NOT NULL,
-  constraint factura_idpedido foreign key (idpedido) references tbl_pedido(id)
+  constraint envio_idpedido foreign key (idpedido) references tbl_pedido(id)
+);
+
+--drop table tbl_ruta
+CREATE TABLE tbl_ruta (
+  id UUID PRIMARY KEY,
+  idpedido UUID NOT NULL,
+  direccionorigen VARCHAR(100) NOT NULL,
+  direcciondestino VARCHAR(100) NOT NULL,
+  tipoentrega VARCHAR(100) NOT NULL,
+  metodotransporte VARCHAR(100) NOT NULL,
+  fechaentrega timestamp(6),
+  constraint ruta_idpedido foreign key (idpedido) references tbl_pedido(id)
+);
+
+--drop table tbl_video
+CREATE TABLE tbl_video (
+  id UUID PRIMARY KEY,
+  idcliente UUID NOT NULL,
+  idproducto SERIAL NOT NULL,
+  urlvideo VARCHAR(150) NOT NULL,
+  urlimagen VARCHAR(150),
+  estadocarga VARCHAR(100) NOT NULL,
+  constraint video_idcliente foreign key (idcliente) references tbl_cliente(id),
+  constraint video_idproducto foreign key (idproducto) references tbl_productos(id)
 );
