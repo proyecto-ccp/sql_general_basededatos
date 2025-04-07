@@ -77,16 +77,16 @@ VALUES
 ('Mochila Impermeable', 'Mochila con compartimento para laptop y resistencia al agua', '660e8400-e29b-41d4-a716-446655440002', 89.99, 9, 8, 10, 1, 2, 13, 'https://example.com/mochila1.jpg', 'https://example.com/mochila2.jpg');
 
 --//-----------------------tbl_SKU------------------------//--
-INSERT INTO tbl_SKU (id, codigo, idProducto) VALUES ('111e8400-e29b-41d4-a716-446655440001', 'SKU-00001', 12);
-INSERT INTO tbl_SKU (id, codigo, idProducto) VALUES ('222e8400-e29b-41d4-a716-446655440002', 'SKU-00002', 13);
-INSERT INTO tbl_SKU (id, codigo, idProducto) VALUES ('333e8400-e29b-41d4-a716-446655440003', 'SKU-00003', 13);
-INSERT INTO tbl_SKU (id, codigo, idProducto) VALUES ('444e8400-e29b-41d4-a716-446655440004', 'SKU-00004', 14);
-INSERT INTO tbl_SKU (id, codigo, idProducto) VALUES ('555e8400-e29b-41d4-a716-446655440005', 'SKU-00005', 15);
-INSERT INTO tbl_SKU (id, codigo, idProducto) VALUES ('666e8400-e29b-41d4-a716-446655440006', 'SKU-00006', 16);
-INSERT INTO tbl_SKU (id, codigo, idProducto) VALUES ('777e8400-e29b-41d4-a716-446655440007', 'SKU-00007', 17);
-INSERT INTO tbl_SKU (id, codigo, idProducto) VALUES ('888e8400-e29b-41d4-a716-446655440008', 'SKU-00008', 3);
-INSERT INTO tbl_SKU (id, codigo, idProducto) VALUES ('999e8400-e29b-41d4-a716-446655440009', 'SKU-00009', 4);
-INSERT INTO tbl_SKU (id, codigo, idProducto) VALUES ('849d0839-24f8-4009-b4b6-8565478949ff', 'SKU-00010', 3);
+INSERT INTO tbl_SKU (id, codigo, idProducto) VALUES ('111e8400-e29b-41d4-a716-446655440001', 'SKU-00001', 21);
+INSERT INTO tbl_SKU (id, codigo, idProducto) VALUES ('222e8400-e29b-41d4-a716-446655440002', 'SKU-00002', 22);
+INSERT INTO tbl_SKU (id, codigo, idProducto) VALUES ('333e8400-e29b-41d4-a716-446655440003', 'SKU-00003', 23);
+INSERT INTO tbl_SKU (id, codigo, idProducto) VALUES ('444e8400-e29b-41d4-a716-446655440004', 'SKU-00004', 24);
+INSERT INTO tbl_SKU (id, codigo, idProducto) VALUES ('555e8400-e29b-41d4-a716-446655440005', 'SKU-00005', 25);
+INSERT INTO tbl_SKU (id, codigo, idProducto) VALUES ('666e8400-e29b-41d4-a716-446655440006', 'SKU-00006', 26);
+INSERT INTO tbl_SKU (id, codigo, idProducto) VALUES ('777e8400-e29b-41d4-a716-446655440007', 'SKU-00007', 27);
+INSERT INTO tbl_SKU (id, codigo, idProducto) VALUES ('888e8400-e29b-41d4-a716-446655440008', 'SKU-00008', 28);
+INSERT INTO tbl_SKU (id, codigo, idProducto) VALUES ('999e8400-e29b-41d4-a716-446655440009', 'SKU-00009', 29);
+INSERT INTO tbl_SKU (id, codigo, idProducto) VALUES ('849d0839-24f8-4009-b4b6-8565478949ff', 'SKU-00010', 30);
 --//-----------------------tbl_SKU------------------------//--
 
 --//-----------------------tbl_condicionesComerciales------------------------//--

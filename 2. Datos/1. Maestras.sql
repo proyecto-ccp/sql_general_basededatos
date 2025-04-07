@@ -67,10 +67,10 @@ INSERT INTO tbl_regiones (idPais, nombre) VALUES
 (1, 'Vichada');
 
 INSERT INTO tbl_ciudades (id, idRegion, poblacion, nombre) VALUES
-(gen_random_uuid(), 5, 7181469, 'Bogotá D.C.'),
-(gen_random_uuid(), 2, 2569528, 'Medellín'),   
-(gen_random_uuid(), 31, 2227642, 'Cali'),      
-(gen_random_uuid(), 4, 1274250, 'Barranquilla'),
+('3e075ba9-c330-4ff1-8825-afb0076989e0', 5, 7181469, 'Bogotá D.C.'),
+('ebc546ea-a179-4b0b-a833-178a53003ce6', 2, 2569528, 'Medellín'),   
+('151f4de7-3aca-4c5a-91cf-443901132e57', 31, 2227642, 'Cali'),      
+('a41fcc14-ea78-4d1b-8a68-1cfec5ed170f', 4, 1274250, 'Barranquilla'),
 (gen_random_uuid(), 6, 914552, 'Cartagena');   
 
 INSERT INTO tbl_medidas (nombre, codigo) VALUES

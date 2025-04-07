@@ -105,9 +105,12 @@ CREATE TABLE tbl_video (
   id UUID PRIMARY KEY,
   idcliente UUID NOT NULL,
   idproducto SERIAL NOT NULL,
+  nombre VARCHAR(100) NOT NULL,
   urlvideo VARCHAR(150) NOT NULL,
   urlimagen VARCHAR(150),
   estadocarga VARCHAR(100) NOT NULL,
+  fechacreacion timestamp(6),
+  fechaactualizacion timestamp(6),
   constraint video_idcliente foreign key (idcliente) references tbl_cliente(id),
   constraint video_idproducto foreign key (idproducto) references tbl_productos(id)
 );
