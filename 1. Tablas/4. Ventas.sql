@@ -3,10 +3,11 @@ CREATE TABLE tbl_cliente (
   id UUID PRIMARY KEY,
   nombre VARCHAR(150) NOT NULL,
   apellido VARCHAR(150) NOT NULL,
+  tipodocumento VARCHAR(100) NOT NULL,
+  documento VARCHAR(100) NOT NULL,
   direccion VARCHAR(100) NOT NULL,
   telefono VARCHAR(100) NOT NULL,
   email VARCHAR(100) NOT NULL,
-  tipocliente VARCHAR(100) NOT NULL,
   fecharegistro timestamp(6)
 );
 
