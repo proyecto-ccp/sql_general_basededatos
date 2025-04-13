@@ -204,3 +204,8 @@ INSERT INTO tbl_materiales (nombre, codigo) VALUES
 ('Granito', 'GRAN'),
 ('Piedra', 'PIED'),
 ('Yeso', 'YESO');
+
+INSERT INTO tbl_tipoDocumento (nombre, codigo) VALUES
+('Cedula', 'CC'),
+('Cedula de extranjeria', 'CE'),
+('Número de identificación tributaria', 'NIT')
