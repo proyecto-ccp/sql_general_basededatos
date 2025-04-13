@@ -1,3 +1,10 @@
+-- Tabla tipo de documento
+CREATE TABLE tbl_tipoDocumento (
+    id SERIAL PRIMARY KEY,
+    nombre VARCHAR(50),
+	codigo VARCHAR(50) UNIQUE
+);
+
 --drop table tbl_cliente
 CREATE TABLE tbl_cliente (
   id UUID PRIMARY KEY,
@@ -14,21 +21,15 @@ CREATE TABLE tbl_cliente (
 --drop table tbl_vendedor
 CREATE TABLE tbl_vendedor (
   id UUID PRIMARY KEY,
+  idTipoDocumento INT REFERENCES tbl_tipoDocumento(id),
   nombre VARCHAR(150) NOT NULL,
   apellido VARCHAR(150) NOT NULL,
   direccion VARCHAR(100) NOT NULL,
   telefono VARCHAR(100) NOT NULL,
   email VARCHAR(100) NOT NULL,
-  tipocliente VARCHAR(100) NOT NULL,
-  fecharegistro timestamp(6)
+  fecharegistro timestamp(6) NOT NULL,
+  fechaactualizacion timestamp(6)
 );
-
---drop table tbl_moneda
-/*CREATE TABLE tbl_moneda (
-  id UUID PRIMARY KEY,
-  nombre VARCHAR(150) NOT NULL,
-  pais VARCHAR(150) NOT NULL
-);*/
 
 --drop table tbl_pedido
 CREATE TABLE tbl_pedido (
