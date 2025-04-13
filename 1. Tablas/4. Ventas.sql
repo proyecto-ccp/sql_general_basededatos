@@ -3,10 +3,11 @@ CREATE TABLE tbl_cliente (
   id UUID PRIMARY KEY,
   nombre VARCHAR(150) NOT NULL,
   apellido VARCHAR(150) NOT NULL,
+  tipodocumento VARCHAR(100) NOT NULL,
+  documento VARCHAR(100) NOT NULL,
   direccion VARCHAR(100) NOT NULL,
   telefono VARCHAR(100) NOT NULL,
   email VARCHAR(100) NOT NULL,
-  tipocliente VARCHAR(100) NOT NULL,
   fecharegistro timestamp(6)
 );
 
@@ -105,9 +106,12 @@ CREATE TABLE tbl_video (
   id UUID PRIMARY KEY,
   idcliente UUID NOT NULL,
   idproducto SERIAL NOT NULL,
+  nombre VARCHAR(100) NOT NULL,
   urlvideo VARCHAR(150) NOT NULL,
   urlimagen VARCHAR(150),
   estadocarga VARCHAR(100) NOT NULL,
+  fechacreacion timestamp(6),
+  fechaactualizacion timestamp(6),
   constraint video_idcliente foreign key (idcliente) references tbl_cliente(id),
   constraint video_idproducto foreign key (idproducto) references tbl_productos(id)
 );
