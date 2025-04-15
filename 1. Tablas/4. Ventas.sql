@@ -22,6 +22,7 @@ CREATE TABLE tbl_cliente (
 CREATE TABLE tbl_vendedor (
   id UUID PRIMARY KEY,
   idTipoDocumento INT REFERENCES tbl_tipoDocumento(id),
+  numeroDocumento VARCHAR(20) NOT NULL,
   nombre VARCHAR(150) NOT NULL,
   apellido VARCHAR(150) NOT NULL,
   direccion VARCHAR(100) NOT NULL,
