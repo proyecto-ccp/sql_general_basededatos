@@ -1,36 +1,34 @@
 --//-----------------------tbl_proveedores------------------------//--
-INSERT INTO tbl_proveedores (id, nombre, direccion, idCiudad, telefono, correo, sitioWeb, idTributario, idPostal, descripcion)
-VALUES
-('3e075ba9-c330-4ff1-8825-afb0076989e0', 'Proveedor A', 'Av. Siempre Viva 123', '3e075ba9-c330-4ff1-8825-afb0076989e0', '+123456789', 'contacto@proveedora.com', 'https://www.proveedora.com', 'ABC123456', 'CP1000', 'Proveedor de insumos industriales');
+INSERT INTO tbl_proveedores (id, nombre, direccion, idCiudad, telefono, correo, idtipodocumento, numerodocumento, fecharegistro)
+VALUES ('3e075ba9-c330-4ff1-8825-afb0076989e0', 'Proveedor A', 'Av. Siempre Viva 123', '3e075ba9-c330-4ff1-8825-afb0076989e0', '+123456789', 'contacto@proveedora.com', 3, '110220330', NOW()::timestamp(6));
 
-INSERT INTO tbl_proveedores (id, nombre, direccion, idCiudad, telefono, correo, sitioWeb, idTributario, idPostal, descripcion)
+INSERT INTO tbl_proveedores (id, nombre, direccion, idCiudad, telefono, correo, idtipodocumento, numerodocumento, fecharegistro)
 VALUES
-('660e8400-e29b-41d4-a716-446655440002', 'Proveedor B', 'Calle Falsa 456', 'ebc546ea-a179-4b0b-a833-178a53003ce6', '+987654321', 'ventas@proveedorb.com', 'https://www.proveedorb.com', 'XYZ654321', 'CP2000', 'Distribuidor mayorista de tecnología');
+('660e8400-e29b-41d4-a716-446655440002', 'Proveedor B', 'Calle Falsa 456', 'ebc546ea-a179-4b0b-a833-178a53003ce6', '+987654321', 'ventas@proveedorb.com', 3, '110220331', NOW()::timestamp(6));
 
-INSERT INTO tbl_proveedores (id, nombre, direccion, idCiudad, telefono, correo, sitioWeb, idTributario, idPostal, descripcion)
+INSERT INTO tbl_proveedores (id, nombre, direccion, idCiudad, telefono, correo, idtipodocumento, numerodocumento, fecharegistro)
 VALUES
-('770e8400-e29b-41d4-a716-446655440004', 'Proveedor C', 'Blvd. Central 789', 'ebc546ea-a179-4b0b-a833-178a53003ce6', '+1122334455', 'info@proveedorc.com', 'https://www.proveedorc.com', 'LMN789012', 'CP3000', 'Empresa especializada en logística y transporte');
+('770e8400-e29b-41d4-a716-446655440004', 'Proveedor C', 'Blvd. Central 789', 'ebc546ea-a179-4b0b-a833-178a53003ce6', '+1122334455', 'info@proveedorc.com', 3, '110220332', NOW()::timestamp(6));
 
-
-INSERT INTO tbl_proveedores (id, nombre, direccion, idCiudad, telefono, correo, sitioWeb, idTributario, idPostal, descripcion)
+INSERT INTO tbl_proveedores (id, nombre, direccion, idCiudad, telefono, correo, idtipodocumento, numerodocumento, fecharegistro)
 VALUES
-('880e8400-e29b-41d4-a716-446655440006', 'Proveedor D', 'Avenida Los Pinos 321', '151f4de7-3aca-4c5a-91cf-443901132e57', '+5566778899', 'soporte@proveedord.com', 'https://www.proveedord.com', 'TRB456789', 'CP4000', 'Proveedor de equipos médicos');
+('880e8400-e29b-41d4-a716-446655440006', 'Proveedor D', 'Avenida Los Pinos 321', '151f4de7-3aca-4c5a-91cf-443901132e57', '+5566778899', 'soporte@proveedord.com', 3, '110220333', NOW()::timestamp(6));
 
-INSERT INTO tbl_proveedores (id, nombre, direccion, idCiudad, telefono, correo, sitioWeb, idTributario, idPostal, descripcion)
+INSERT INTO tbl_proveedores (id, nombre, direccion, idCiudad, telefono, correo, idtipodocumento, numerodocumento, fecharegistro)
 VALUES
-('990e8400-e29b-41d4-a716-446655440008', 'Proveedor E', 'Calle del Sol 654', '151f4de7-3aca-4c5a-91cf-443901132e57', '+6677889900', 'ventas@proveedore.com', 'https://www.proveedore.com', 'GHI567890', 'CP5000', 'Distribuidor de productos electrónicos');
+('990e8400-e29b-41d4-a716-446655440008', 'Proveedor E', 'Calle del Sol 654', '151f4de7-3aca-4c5a-91cf-443901132e57', '+6677889900', 'ventas@proveedore.com', 3, '110220334', NOW()::timestamp(6)); 
 
-INSERT INTO tbl_proveedores (id, nombre, direccion, idCiudad, telefono, correo, sitioWeb, idTributario, idPostal, descripcion)
+INSERT INTO tbl_proveedores (id, nombre, direccion, idCiudad, telefono, correo, idtipodocumento, numerodocumento, fecharegistro)
 VALUES
-('aa0e8400-e29b-41d4-a716-446655440010', 'Proveedor F', 'Ruta 66 #99', 'a41fcc14-ea78-4d1b-8a68-1cfec5ed170f', '+7788990011', 'contacto@proveedorf.com', 'https://www.proveedorf.com', 'JKL678901', 'CP6000', 'Fabricante de muebles y decoración');
+('aa0e8400-e29b-41d4-a716-446655440010', 'Proveedor F', 'Ruta 66 #99', 'a41fcc14-ea78-4d1b-8a68-1cfec5ed170f', '+7788990011', 'contacto@proveedorf.com', 3, '110220335', NOW()::timestamp(6)); 
 
-INSERT INTO tbl_proveedores (id, nombre, direccion, idCiudad, telefono, correo, sitioWeb, idTributario, idPostal, descripcion)
+INSERT INTO tbl_proveedores (id, nombre, direccion, idCiudad, telefono, correo, idtipodocumento, numerodocumento, fecharegistro)
 VALUES
-('bb0e8400-e29b-41d4-a716-446655440012', 'Proveedor G', 'Pasaje del Río 11', 'a41fcc14-ea78-4d1b-8a68-1cfec5ed170f', '+8899001122', 'info@proveedorg.com', 'https://www.proveedorg.com', 'MNO789012', 'CP7000', 'Proveedor de alimentos y bebidas');
+('bb0e8400-e29b-41d4-a716-446655440012', 'Proveedor G', 'Pasaje del Río 11', 'a41fcc14-ea78-4d1b-8a68-1cfec5ed170f', '+8899001122', 'info@proveedorg.com', 3, '110220336', NOW()::timestamp(6)); 
 
-INSERT INTO tbl_proveedores (id, nombre, direccion, idCiudad, telefono, correo, sitioWeb, idTributario, idPostal, descripcion)
+INSERT INTO tbl_proveedores (id, nombre, direccion, idCiudad, telefono, correo, idtipodocumento, numerodocumento, fecharegistro)
 VALUES
-('cc0e8400-e29b-41d4-a716-446655440014', 'Proveedor H', 'Plaza Central 55', 'a41fcc14-ea78-4d1b-8a68-1cfec5ed170f', '+9900112233', 'servicio@proveedorh.com', 'https://www.proveedorh.com', 'PQR890123', 'CP8000', 'Empresa de consultoría en tecnología');
+('cc0e8400-e29b-41d4-a716-446655440014', 'Proveedor H', 'Plaza Central 55', 'a41fcc14-ea78-4d1b-8a68-1cfec5ed170f', '+9900112233', 'servicio@proveedorh.com', 3, '110220337', NOW()::timestamp(6)); 
 
 --//-----------------------tbl_proveedores------------------------//--
 
@@ -77,16 +75,7 @@ VALUES
 ('Mochila Impermeable', 'Mochila con compartimento para laptop y resistencia al agua', '660e8400-e29b-41d4-a716-446655440002', 89.99, 9, 8, 10, 1, 2, 13, 'https://example.com/mochila1.jpg', 'https://example.com/mochila2.jpg');
 
 --//-----------------------tbl_SKU------------------------//--
-INSERT INTO tbl_SKU (id, codigo, idProducto) VALUES ('111e8400-e29b-41d4-a716-446655440001', 'SKU-00001', 1);
-INSERT INTO tbl_SKU (id, codigo, idProducto) VALUES ('222e8400-e29b-41d4-a716-446655440002', 'SKU-00002', 2);
-INSERT INTO tbl_SKU (id, codigo, idProducto) VALUES ('333e8400-e29b-41d4-a716-446655440003', 'SKU-00003', 3);
-INSERT INTO tbl_SKU (id, codigo, idProducto) VALUES ('444e8400-e29b-41d4-a716-446655440004', 'SKU-00004', 4);
-INSERT INTO tbl_SKU (id, codigo, idProducto) VALUES ('555e8400-e29b-41d4-a716-446655440005', 'SKU-00005', 5);
-INSERT INTO tbl_SKU (id, codigo, idProducto) VALUES ('666e8400-e29b-41d4-a716-446655440006', 'SKU-00006', 6);
-INSERT INTO tbl_SKU (id, codigo, idProducto) VALUES ('777e8400-e29b-41d4-a716-446655440007', 'SKU-00007', 7);
-INSERT INTO tbl_SKU (id, codigo, idProducto) VALUES ('888e8400-e29b-41d4-a716-446655440008', 'SKU-00008', 8);
-INSERT INTO tbl_SKU (id, codigo, idProducto) VALUES ('999e8400-e29b-41d4-a716-446655440009', 'SKU-00009', 9);
-INSERT INTO tbl_SKU (id, codigo, idProducto) VALUES ('849d0839-24f8-4009-b4b6-8565478949ff', 'SKU-00010', 10);
+
 --//-----------------------tbl_SKU------------------------//--
 
 --//-----------------------tbl_condicionesComerciales------------------------//--

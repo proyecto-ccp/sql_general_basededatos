@@ -85,10 +85,10 @@ CREATE TABLE tbl_proveedores (
     idCiudad UUID REFERENCES tbl_ciudades(id),
     telefono VARCHAR(20),
     correo VARCHAR(50),
-    sitioWeb VARCHAR(50),
-    idTributario VARCHAR(50),
-    idPostal VARCHAR(20),
-    descripcion VARCHAR(255)
+	idTipoDocumento INT REFERENCES tbl_tipoDocumento(id),
+	numeroDocumento VARCHAR(20) NOT NULL,
+	fecharegistro timestamp(6) NOT NULL,
+	fechaactualizacion timestamp(6)
 );
 
 -- Tabla productos
@@ -147,3 +147,24 @@ CREATE TABLE tbl_condicionesProducto (
     fechaFin DATE,
     observaciones VARCHAR(255)
 );
+
+-- Vista vw_datosubicacion
+CREATE VIEW vw_datosubicacion
+AS
+SELECT P.id idpais,
+P.nombre nombrepais, 
+P.ididioma,
+I.nombre idioma,
+P.idmoneda,
+M.nombre moneda,
+M.acronimo acronimomoneda,
+R.id idregion,
+R.nombre region,
+C.id idciudad,
+C.nombre ciudad,
+C.poblacion
+FROM tbl_paises p
+	INNER JOIN tbl_regiones R ON (P.id = R.idpais) 
+	INNER JOIN tbl_idiomas I ON (P.ididioma = I.id)
+	INNER JOIN tbl_monedas M ON (M.id = P.idmoneda)
+	INNER JOIN tbl_ciudades C ON (C.idregion = R.id)
