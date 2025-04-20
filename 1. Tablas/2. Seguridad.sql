@@ -52,3 +52,10 @@ CREATE TABLE tbl_rol_permiso (
   constraint usuario_rol_idusuario foreign key (idpermiso) references tbl_permiso(id),
   constraint usuario_rol_idrol foreign key (idrol) references tbl_rol(id)
 );
+
+CREATE TABLE tbl_parametros 
+(
+	id VARCHAR(250) PRIMARY KEY,
+	valor VARCHAR(250) NOT NULL,
+	descripcion VARCHAR(500) NOT NULL
+);
