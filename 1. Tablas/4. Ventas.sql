@@ -41,7 +41,7 @@ CREATE TABLE tbl_pedido (
   estadopedido VARCHAR(100) NOT NULL,
   valortotal numeric(10,3),
   idvendedor UUID NOT NULL,
-  tipoventa VARCHAR(100) NOT NULL,
+  comentarios VARCHAR(max) NOT NULL,
   idmoneda SERIAL NOT NULL,
   constraint pedido_idcliente foreign key (idcliente) references tbl_cliente(id),
   constraint pedido_idvendedor foreign key (idvendedor) references tbl_vendedor(id),
