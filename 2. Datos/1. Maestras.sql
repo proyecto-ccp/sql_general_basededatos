@@ -73,6 +73,28 @@ INSERT INTO tbl_ciudades (id, idRegion, poblacion, nombre) VALUES
 ('a41fcc14-ea78-4d1b-8a68-1cfec5ed170f', 4, 1274250, 'Barranquilla'),
 (gen_random_uuid(), 6, 914552, 'Cartagena');   
 
+
+-- Zonas para Bogotá D.C.
+INSERT INTO tbl_zonas (id, idciudad, nombre, limites) VALUES
+('11e86372-1b67-4d4b-b234-53f716dab601', '3e075ba9-c330-4ff1-8825-afb0076989e0', 'Zona Norte', 'Del río Bogotá hasta la calle 170'),
+('22e86372-2c89-4e0b-a324-85b716dab602', '3e075ba9-c330-4ff1-8825-afb0076989e0', 'Zona Centro', 'Entre la calle 26 y la calle 72');
+
+-- Zonas para Medellín
+INSERT INTO tbl_zonas (id, idciudad, nombre, limites) VALUES
+('33e86372-3f91-4c1a-b456-93c716dab603', 'ebc546ea-a179-4b0b-a833-178a53003ce6', 'Zona Nororiental', 'Desde el barrio Popular hasta Santo Domingo'),
+('44e86372-4a92-4d7b-c789-24d716dab604', 'ebc546ea-a179-4b0b-a833-178a53003ce6', 'Zona Centro', 'Entre San Antonio y Prado Centro');
+
+-- Zonas para Cali
+INSERT INTO tbl_zonas (id, idciudad, nombre, limites) VALUES
+('55e86372-5b93-4e8c-d890-63e716dab605', '151f4de7-3aca-4c5a-91cf-443901132e57', 'Zona Sur', 'Desde Ciudad Jardín hasta Pance'),
+('66e86372-6c94-4f9d-e901-12e716dab606', '151f4de7-3aca-4c5a-91cf-443901132e57', 'Zona Oeste', 'Entre el río Cali y los farallones');
+
+-- Zonas para Barranquilla
+INSERT INTO tbl_zonas (id, idciudad, nombre, limites) VALUES
+('77e86372-7d95-5a0e-f012-75e716dab607', 'a41fcc14-ea78-4d1b-8a68-1cfec5ed170f', 'Zona Metropolitana', 'Área que conecta con Soledad y Malambo'),
+('88e86372-8e96-6b1f-0123-46e716dab608', 'a41fcc14-ea78-4d1b-8a68-1cfec5ed170f', 'Zona Centro Histórico', 'Desde el Paseo Bolívar hasta Barrio Abajo');
+
+
 INSERT INTO tbl_medidas (nombre, codigo) VALUES
 ('Unidad', 'UND'),
 ('Metro', 'M'),
