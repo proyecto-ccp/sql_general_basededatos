@@ -34,6 +34,13 @@ CREATE TABLE tbl_ciudades (
     nombre VARCHAR(100)
 );
 
+-- Tabla zonas
+CREATE TABLE tbl_zonas (
+    id UUID PRIMARY KEY,
+    idciudad UUID REFERENCES tbl_ciudades(id),
+    nombre VARCHAR(100),
+    limites VARCHAR(400)
+);
 
 -- Tabla medidas
 CREATE TABLE tbl_medidas (

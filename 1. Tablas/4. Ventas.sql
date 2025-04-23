@@ -15,7 +15,9 @@ CREATE TABLE tbl_cliente (
   direccion VARCHAR(100) NOT NULL,
   telefono VARCHAR(100) NOT NULL,
   email VARCHAR(100) NOT NULL,
-  fecharegistro timestamp(6)
+  idzona UUID NOT NULL,
+  fecharegistro timestamp(6),
+  constraint cliente_idzona foreign key (idzona) references tbl_zonas(id),
 );
 
 --drop table tbl_vendedor
@@ -40,7 +42,7 @@ CREATE TABLE tbl_pedido (
   fechaentrega timestamp(6),
   estadopedido VARCHAR(100) NOT NULL,
   valortotal numeric(10,3),
-  idvendedor UUID NOT NULL,
+  idvendedor UUID NULL,
   comentarios VARCHAR(max) NOT NULL,
   idmoneda SERIAL NOT NULL,
   constraint pedido_idcliente foreign key (idcliente) references tbl_cliente(id),
@@ -51,7 +53,8 @@ CREATE TABLE tbl_pedido (
 --drop table tbl_detalle_pedido
 CREATE TABLE tbl_detalle_pedido (
   id UUID PRIMARY KEY,
-  idpedido UUID NOT NULL,
+  idpedido UUID NULL,
+  idusuario UUID NOT NULL,
   idproducto SERIAL NOT NULL,
   cantidad int,
   preciounitario numeric(10,3),
