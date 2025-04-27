@@ -51,6 +51,9 @@ CREATE TABLE tbl_pedido (
 );
 
 ALTER TABLE tbl_pedido
+ALTER COLUMN idvendedor UUID NULL
+
+ALTER TABLE tbl_pedido
 ALTER COLUMN fechaentrega TYPE timestamp with time zone USING fechaentrega AT TIME ZONE 'UTC';
 
 ALTER TABLE tbl_pedido
