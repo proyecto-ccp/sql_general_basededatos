@@ -175,3 +175,26 @@ FROM tbl_paises p
 	INNER JOIN tbl_idiomas I ON (P.ididioma = I.id)
 	INNER JOIN tbl_monedas M ON (M.id = P.idmoneda)
 	INNER JOIN tbl_ciudades C ON (C.idregion = R.id)
+	
+-- Vista vw_datosubicacionzona
+CREATE VIEW vw_datosubicacionzona
+AS
+SELECT P.id idpais,
+P.nombre nombrepais, 
+P.ididioma,
+I.nombre idioma,
+P.idmoneda,
+M.nombre moneda,
+M.acronimo acronimomoneda,
+R.id idregion,
+R.nombre region,
+C.id idciudad,
+C.nombre ciudad,
+Z.id idzona,
+Z.nombre zona
+FROM tbl_paises p
+	INNER JOIN tbl_regiones R ON (P.id = R.idpais) 
+	INNER JOIN tbl_idiomas I ON (P.ididioma = I.id)
+	INNER JOIN tbl_monedas M ON (M.id = P.idmoneda)
+	INNER JOIN tbl_ciudades C ON (C.idregion = R.id)  
+	INNER JOIN tbl_zonas Z ON (Z.idciudad = C.id)	
