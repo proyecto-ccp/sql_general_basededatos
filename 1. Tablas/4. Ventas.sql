@@ -38,17 +38,26 @@ CREATE TABLE tbl_vendedor (
 CREATE TABLE tbl_pedido (
   id UUID PRIMARY KEY,
   idcliente UUID NOT NULL,
-  fecharealizado timestamp(6),
-  fechaentrega timestamp(6),
+  fecharealizado timestamp(6) NULL,
+  fechaentrega timestamp(6) NOT NULL,
   estadopedido VARCHAR(100) NOT NULL,
   valortotal numeric(10,3),
   idvendedor UUID NULL,
-  comentarios VARCHAR(max) NOT NULL,
+  comentarios VARCHAR(4000) NOT NULL,
   idmoneda SERIAL NOT NULL,
   constraint pedido_idcliente foreign key (idcliente) references tbl_cliente(id),
   constraint pedido_idvendedor foreign key (idvendedor) references tbl_vendedor(id),
   constraint pedido_idmoneda foreign key (idmoneda) references tbl_monedas(id)
 );
+
+ALTER TABLE tbl_pedido
+ALTER COLUMN idvendedor UUID NULL
+
+ALTER TABLE tbl_pedido
+ALTER COLUMN fechaentrega TYPE timestamp with time zone USING fechaentrega AT TIME ZONE 'UTC';
+
+ALTER TABLE tbl_pedido
+ALTER COLUMN fecharealizado TYPE timestamp with time zone USING fecharealizado AT TIME ZONE 'UTC';
 
 --drop table tbl_detalle_pedido
 CREATE TABLE tbl_detalle_pedido (
