@@ -15,6 +15,7 @@ CREATE TABLE tbl_monedas (
 CREATE TABLE tbl_paises (
     id SERIAL PRIMARY KEY,
     nombre VARCHAR(100),
+	indicativo VARCHAR(5)
     idIdioma INT REFERENCES tbl_idiomas(id),
     idMoneda INT REFERENCES tbl_monedas(id)
 );
@@ -165,6 +166,7 @@ I.nombre idioma,
 P.idmoneda,
 M.nombre moneda,
 M.acronimo acronimomoneda,
+P.indicativo,
 R.id idregion,
 R.nombre region,
 C.id idciudad,
@@ -186,6 +188,7 @@ I.nombre idioma,
 P.idmoneda,
 M.nombre moneda,
 M.acronimo acronimomoneda,
+P.indicativo,
 R.id idregion,
 R.nombre region,
 C.id idciudad,
