@@ -129,3 +129,29 @@ CREATE TABLE tbl_video (
   constraint video_idcliente foreign key (idcliente) references tbl_cliente(id),
   constraint video_idproducto foreign key (idproducto) references tbl_productos(id)
 );
+
+CREATE TABLE tbl_planesventas (
+	id UUID PRIMARY KEY,
+	nombre VARCHAR (200) NOT NULL,
+	fechainicio timestamp(6) NOT NULL,
+	fechafinal timestamp(6) NOT NULL,
+	fecharegistro timestamp(6) NOT NULL,
+  fechaactualizacion timestamp(6)
+);
+
+CREATE TABLE tbl_productosplanesventas (
+	id SERIAL PRIMARY KEY,
+	idplanventas UUID REFERENCES tbl_planesventas(id),
+	idproducto INT REFERENCES tbl_productos(id),
+	valortotal numeric(10,3) NOT NULL,
+	fecharegistro timestamp(6) NOT NULL,
+  fechaactualizacion timestamp(6)
+);
+
+CREATE TABLE tbl_vendedoresplanesventas (
+	id SERIAL PRIMARY KEY,
+	idplanventas UUID REFERENCES tbl_planesventas(id),
+	idvendedor UUID REFERENCES tbl_vendedor(id),
+	fecharegistro timestamp(6) NOT NULL,
+  fechaactualizacion timestamp(6)
+);
