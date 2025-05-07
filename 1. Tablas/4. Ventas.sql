@@ -114,6 +114,15 @@ CREATE TABLE tbl_ruta (
   fechaactualizacion timestamp(6)
 );
 
+CREATE TABLE tbl_rutaspedidos (
+	id SERIAL PRIMARY KEY,
+	idruta UUID REFERENCES tbl_ruta(id),
+	idpedido UUID REFERENCES tbl_pedido(id),
+	estado VARCHAR(20) NOT NULL,
+	fecharegistro timestamp(6) NOT NULL,
+	fechaactualizacion timestamp(6)
+);
+
 --drop table tbl_video
 CREATE TABLE tbl_video (
   id UUID PRIMARY KEY,
