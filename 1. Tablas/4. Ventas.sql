@@ -106,13 +106,21 @@ CREATE TABLE tbl_envio (
 --drop table tbl_ruta
 CREATE TABLE tbl_ruta (
   id UUID PRIMARY KEY,
-  idpedido UUID NOT NULL,
   direccionorigen VARCHAR(100) NOT NULL,
   direcciondestino VARCHAR(100) NOT NULL,
   tipoentrega VARCHAR(100) NOT NULL,
   metodotransporte VARCHAR(100) NOT NULL,
-  fechaentrega timestamp(6),
-  constraint ruta_idpedido foreign key (idpedido) references tbl_pedido(id)
+  fecharegistro timestamp(6) NOT NULL,
+  fechaactualizacion timestamp(6)
+);
+
+CREATE TABLE tbl_rutaspedidos (
+	id SERIAL PRIMARY KEY,
+	idruta UUID REFERENCES tbl_ruta(id),
+	idpedido UUID REFERENCES tbl_pedido(id),
+	estado VARCHAR(20) NOT NULL,
+	fecharegistro timestamp(6) NOT NULL,
+	fechaactualizacion timestamp(6)
 );
 
 --drop table tbl_video
@@ -133,10 +141,10 @@ CREATE TABLE tbl_video (
 CREATE TABLE tbl_planesventas (
 	id UUID PRIMARY KEY,
 	nombre VARCHAR (200) NOT NULL,
-	fechainicio timestamp(6) NOT NULL,
-	fechafinal timestamp(6) NOT NULL,
+	fechainicio DATE NOT NULL,
+	fechafinal DATE NOT NULL,
 	fecharegistro timestamp(6) NOT NULL,
-  fechaactualizacion timestamp(6)
+	fechaactualizacion timestamp(6)
 );
 
 CREATE TABLE tbl_productosplanesventas (
@@ -145,7 +153,7 @@ CREATE TABLE tbl_productosplanesventas (
 	idproducto INT REFERENCES tbl_productos(id),
 	valortotal numeric(10,3) NOT NULL,
 	fecharegistro timestamp(6) NOT NULL,
-  fechaactualizacion timestamp(6)
+	fechaactualizacion timestamp(6)
 );
 
 CREATE TABLE tbl_vendedoresplanesventas (
@@ -153,7 +161,7 @@ CREATE TABLE tbl_vendedoresplanesventas (
 	idplanventas UUID REFERENCES tbl_planesventas(id),
 	idvendedor UUID REFERENCES tbl_vendedor(id),
 	fecharegistro timestamp(6) NOT NULL,
-  fechaactualizacion timestamp(6)
+	fechaactualizacion timestamp(6)
 );
 
 --DROP table tbl_visita
