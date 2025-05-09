@@ -163,3 +163,16 @@ CREATE TABLE tbl_vendedoresplanesventas (
 	fecharegistro timestamp(6) NOT NULL,
 	fechaactualizacion timestamp(6)
 );
+
+--DROP table tbl_visita
+CREATE TABLE tbl_visita(
+  id SERIAL PRIMARY KEY,
+  idcliente UUID REFERENCES tbl_cliente(id),
+  idvendedor UUID REFERENCES tbl_vendedor(id),
+  fecha_visita TIMESTAMP WITH TIME ZONE NOT NULL,
+  motivo VARCHAR (300) NOT NULL,
+  resultado VARCHAR (300) NULL,
+  estado_visita VARCHAR (100) NOT NULL
+);
+
+--ALTER COLUMN fechaentrega TYPE timestamp with time zone USING fechaentrega AT TIME ZONE 'UTC';
