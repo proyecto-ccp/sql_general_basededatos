@@ -258,3 +258,7 @@ INSERT INTO tbl_bodegas (idciudad, nombre, fecharegistro) VALUES
 ('ff111b9c-bf4a-41d7-a7b9-74d7c337946c', 'BODEGA TRES', NOW()),
 ('ff111b9c-bf4a-41d7-a7b9-74d7c337946c', 'BODEGA CUATRO', NOW()),
 ('ff111b9c-bf4a-41d7-a7b9-74d7c337946c', 'BODEGA CINCO', NOW())
+
+INSERT INTO tbl_productosbodega (idbodega, idproducto, pasillo, estante, nivel, fecharegistro)
+SELECT 1, id, 2, 3, 4, NOW() FROM tbl_productos
+

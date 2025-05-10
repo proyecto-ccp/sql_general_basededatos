@@ -26,3 +26,31 @@ CREATE TABLE tbl_productosbodega (
   fecharegistro timestamp(6) NOT NULL,
   fechaactualizacion timestamp(6)
 );
+
+CREATE OR REPLACE FUNCTION fun_productoenbodega(p_idproducto INT)
+returns table(idciudad UUID,
+              ciudad VARCHAR,
+              idproducto INT,
+              producto VARCHAR,
+              idbodega INT,
+              bodega VARCHAR,
+              pasillo INT,
+              estante INT,
+              nivel INT
+              )
+as $$
+SELECT C.id idciudad, 
+C.nombre ciudad, 
+P.id idproducto, 
+P.nombre producto, 
+B.id idbodega, 
+B.nombre bodega, 
+PB.pasillo, 
+PB.estante, 
+PB.nivel
+FROM tbl_productosbodega PB
+INNER JOIN tbl_productos P ON (P.id = PB.idproducto)
+INNER JOIN tbl_bodegas B ON (B.id = PB.idbodega)
+INNER JOIN tbl_ciudades C ON (C.id = B.idciudad )
+WHERE P.id =  p_idproducto
+$$ language sql;
