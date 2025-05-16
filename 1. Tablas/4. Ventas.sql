@@ -15,10 +15,13 @@ CREATE TABLE tbl_cliente (
   direccion VARCHAR(100) NOT NULL,
   telefono VARCHAR(100) NOT NULL,
   email VARCHAR(100) NOT NULL,
+  contrasenia VARCHAR(100) NOT NULL,
   idzona UUID NOT NULL,
   fecharegistro timestamp(6),
   constraint cliente_idzona foreign key (idzona) references tbl_zonas(id),
 );
+
+--ALTER TABLE tbl_cliente ADD COLUMN contrasenia VARCHAR(100); NOT NULL
 
 --drop table tbl_vendedor
 CREATE TABLE tbl_vendedor (
@@ -38,8 +41,8 @@ CREATE TABLE tbl_vendedor (
 CREATE TABLE tbl_pedido (
   id UUID PRIMARY KEY,
   idcliente UUID NOT NULL,
-  fecharealizado timestamp(6) NULL,
-  fechaentrega timestamp(6) NOT NULL,
+  fecharealizado TIMESTAMP WITH TIME ZONE NOT NULL,
+  fechaentrega TIMESTAMP WITH TIME ZONE NOT NULL,
   estadopedido VARCHAR(100) NOT NULL,
   valortotal numeric(10,3),
   idvendedor UUID NULL,
@@ -53,11 +56,11 @@ CREATE TABLE tbl_pedido (
 ALTER TABLE tbl_pedido
 ALTER COLUMN idvendedor UUID NULL
 
-ALTER TABLE tbl_pedido
-ALTER COLUMN fechaentrega TYPE timestamp with time zone USING fechaentrega AT TIME ZONE 'UTC';
+/*ALTER TABLE tbl_pedido
+ALTER COLUMN fechaentrega TYPE TIMESTAMP WITH TIME ZONE NOT NULL;
 
 ALTER TABLE tbl_pedido
-ALTER COLUMN fecharealizado TYPE timestamp with time zone USING fecharealizado AT TIME ZONE 'UTC';
+ALTER COLUMN fecharealizado TYPE TIMESTAMP WITH TIME ZONE NOT NULL;*/
 
 --drop table tbl_detalle_pedido
 CREATE TABLE tbl_detalle_pedido (
