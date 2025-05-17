@@ -16,7 +16,7 @@ CREATE TABLE tbl_auditoria (
   accion VARCHAR(100) NOT NULL,
   tablaafectada VARCHAR(100) NOT NULL,
   idregistro VARCHAR(100) NOT NULL,
-  registro varchar(4000) NOT NULL,
+  registro varchar NOT NULL,
   fecharegistro timestamp(6),
   constraint auditoria_idusuario foreign key (idusuario) references tbl_usuario(id)
 );
